@@ -9,19 +9,26 @@ body {
     max-width: 600px;
 }
 .cards {
-background: black;
+/* background: black;
 width: 20%;
 padding-bottom: 20%;
 float: left;
 margin: 2.5%;
-border-radius: 20%;
+border-radius: 20%; */
 
 }
 
+.cards img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin: 2.5%;
+    border-radius: 20%;
+    overflow: hidden; 
+}
 h1 {
     text-align: center;
     background: pink;
-    padding: 30px 0;
     margin: auto;
 }
 
@@ -31,4 +38,14 @@ h1 {
     padding: 30px 0;
     margin: auto;
     font-size: 2em;
+}
+
+.selected {
+    background: white;
+    width: 20%;
+    padding-bottom: 20%;
+    float: left;
+    margin: 2.5%;
+    border-radius: 20%;
+    text-align: center;
 }

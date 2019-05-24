@@ -1,22 +1,76 @@
 //selects the divs that contain the cards
 var card = document.getElementsByClassName("cards");
-var cardValue = ["A", "A", "B", "B", "C", "C", "D", "D"];
-var selectedCard = getElementsByClassName("selected");
+
+// all of the card images
+var cardValueArray = [
+    {
+        animal: "tiger",
+        image: "images/Tiger1.jpg",
+    },
+    {
+        animal: "frog",
+        image: "images/Frog1.jpg",
+    },
+    {
+        animal: "owl",
+        image: "images/Owl1.jpg",
+    },
+    {
+        animal: "dog",
+        image: "images/Dog1.jpg",
+    },
+    {
+        animal: "tiger",
+        image: "images/Tiger1.jpg",
+    },
+    {
+        animal: "frog",
+        image: "images/Frog1.jpg",
+    },
+    {
+        animal: "owl",
+        image: "images/Owl1.jpg",
+    },
+    {
+        animal: "dog",
+        image: "images/Dog1.jpg",
+    }
+];
+
+// runs initial JS on page load
+window.onload = assignImages;
+
+// function start(){
+//     assignImages;
+//     // randomizeCards;
+// };
+
+
+// This function assigns images to the cards
+function assignImages(){
+    for(var i = 0; i < card.length; i++){
+        card[i].innerHTML = '<img src="' + cardValueArray[i].image + '" >';
+    };
+};
 
 //event listener for all cards
 for(var i = 0; i < card.length; i++){
     card[i].addEventListener("click", function()
     {
-        this.className = "selected";      
+       this.classList.toggle("selected");
     }
     )};
-//assign values to cards
-for(var i = 0; i < card.length; i++){
-    card[i].innerHTML = cardValue[i];
-};
+
+    // function randomizeCards(){
+    //     var random = Math.floor(Math.random() * card.length);
+    //     return card[random];
+    // }
+
+
+
 
 // first click is selected card
-var selectedCard 
+
 // randomize assign
 //logic that compares selected cards
 //if match hide or remove cards with a status

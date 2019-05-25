@@ -4,41 +4,57 @@ var card = document.getElementsByClassName("cards");
 // all of the card images
 var cardValueArray = [
     {
-        animal: "tiger",
+        name: "tiger",
         image: "images/Tiger1.jpg",
+        story: "story/tiger.html"
     },
     {
-        animal: "frog",
+        name: "frog",
         image: "images/Frog1.jpg",
+        story: "story/frog.html"
     },
     {
-        animal: "owl",
+        name: "owl",
         image: "images/Owl1.jpg",
+        story: "story/owl.html"
     },
     {
-        animal: "dog",
+        name: "dog",
         image: "images/Dog1.jpg",
+        story: "story/dog.html"
     },
     {
-        animal: "tiger",
-        image: "images/Tiger1.jpg",
+        name: "tiger",
+        image: "images/Tiger2.jpg",
+        story: "story/tiger.html"
     },
     {
-        animal: "frog",
-        image: "images/Frog1.jpg",
+        name: "frog",
+        image: "images/Frog2.jpg",
+        story: "story/frog.html"
     },
     {
-        animal: "owl",
-        image: "images/Owl1.jpg",
+        name: "owl",
+        image: "images/Owl2.jpg",
+        story: "story/owl.html"
     },
     {
-        animal: "dog",
-        image: "images/Dog1.jpg",
+        name: "dog",
+        image: "images/Dog2.jpg",
+        story: "story/dog.html"
     }
 ];
 
+// var animalName = cardValueArray.name;
+// counts how many cards have been selected
+var count = 0; 
+
+// empty var that will be used to match
+var firstPick = "";
+var secondPick = "";
+
 // runs initial JS on page load
-window.onload = assignImages;
+window.onload = assignInfo;
 
 // function start(){
 //     assignImages;
@@ -47,20 +63,49 @@ window.onload = assignImages;
 
 
 // This function assigns images to the cards
-function assignImages(){
+function assignInfo(){
     for(var i = 0; i < card.length; i++){
         card[i].innerHTML = '<img src="' + cardValueArray[i].image + '" >';
+        card[i].dataset.name = cardValueArray[i].name
+        card[i].dataset.story = cardValueArray[i].story
     };
-};
+}
 
 //event listener for all cards
 for(var i = 0; i < card.length; i++){
-    card[i].addEventListener("click", function()
-    {
-       this.classList.toggle("selected");
-    }
-    )};
+    card[i].addEventListener("click", function(){
+        if (count < 2){
+            count++;
+            if (count === 1){
+                firstPick = this.dataset.name;
+                this.classList.add("selected")
+            } else{
+            secondPick = this.dataset.name;
+            this.classList.add("selected")
+        }}
+        if (firstPick !== "" && secondPick !== ""){
+            if(firstPick === secondPick){
+                alert("PERFECT PAIR!")
+                window.location.assign(this.dataset.story)
+            } else{
+                alert("try again!")
+                resetCards();
+            }
+        }
+    })};
 
+
+
+    // function to reset and remove selected class from cards
+    function resetCards(){
+        count = 0
+        firstPick = ""
+        secondPick = ""
+
+        for(var i = 0; i < card.length; i++){
+            card[i].classList.remove("selected");
+        }
+    }
     // function randomizeCards(){
     //     var random = Math.floor(Math.random() * card.length);
     //     return card[random];

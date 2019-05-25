@@ -53,6 +53,10 @@ var count = 0;
 var firstPick = "";
 var secondPick = "";
 
+// variable to prevent duplicate selection of same image
+var firstClick = null
+
+
 // runs initial JS on page load
 window.onload = assignInfo;
 
@@ -79,6 +83,7 @@ for(var i = 0; i < card.length; i++){
             if (count === 1){
                 firstPick = this.dataset.name;
                 this.classList.add("selected")
+                
             } else{
             secondPick = this.dataset.name;
             this.classList.add("selected")

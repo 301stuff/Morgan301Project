@@ -4,7 +4,6 @@ body {
 }
 
 #gameboard {
-    padding-top: 10%;
     margin: 0 auto;
     max-width: 600px;
 }
@@ -34,11 +33,22 @@ h1 {
 #instructions {
     text-align: center;
     background: pink;
-    padding: 30px 0;
+    padding: 20px 0;
     margin: auto;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .selected {
 opacity: .5;
+}
+
+p {
+    text-align: center;
+    font-size: 5em;
+}
+
+.button {
+    display: block;
+    max-width: 60px;
+    margin: auto;
 }

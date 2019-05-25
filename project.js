@@ -5,42 +5,42 @@ var card = document.getElementsByClassName("cards");
 var cardValueArray = [
     {
         name: "tiger",
-        image: "images/Tiger1.jpg",
+        image: "Images/Tiger1.jpg",
         story: "story/tiger.html"
     },
     {
         name: "frog",
-        image: "images/Frog1.jpg",
+        image: "Images/Frog1.jpg",
         story: "story/frog.html"
     },
     {
         name: "owl",
-        image: "images/Owl1.jpg",
+        image: "Images/Owl1.jpg",
         story: "story/owl.html"
     },
     {
         name: "dog",
-        image: "images/Dog1.jpg",
+        image: "Images/Dog1.jpg",
         story: "story/dog.html"
     },
     {
         name: "tiger",
-        image: "images/Tiger2.jpg",
+        image: "Images/Tiger2.jpg",
         story: "story/tiger.html"
     },
     {
         name: "frog",
-        image: "images/Frog2.jpg",
+        image: "Images/Frog2.jpg",
         story: "story/frog.html"
     },
     {
         name: "owl",
-        image: "images/Owl2.jpg",
+        image: "Images/Owl2.jpg",
         story: "story/owl.html"
     },
     {
         name: "dog",
-        image: "images/Dog2.jpg",
+        image: "Images/Dog2.jpg",
         story: "story/dog.html"
     }
 ];

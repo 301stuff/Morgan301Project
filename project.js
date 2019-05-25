@@ -65,7 +65,7 @@ window.onload = assignInfo;
 // This function assigns images to the cards
 function assignInfo(){
     for(var i = 0; i < card.length; i++){
-        card[i].innerHTML = '<img src=' + cardValueArray[i].image + '>';
+        card[i].innerHTML = '<img src="' + cardValueArray[i].image + '" >';
         card[i].dataset.name = cardValueArray[i].name
         card[i].dataset.story = cardValueArray[i].story
     };

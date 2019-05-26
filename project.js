@@ -1,5 +1,15 @@
+if (localStorage.userName) { // Test if user has been to site
+} else {
+  var userNameInput = prompt('What is the name of your Matchmaking Service?'); // get their name
+  localStorage.setItem('userName', userNameInput); 
+}
+
 //selects the divs that contain the cards
 var card = document.getElementsByClassName("cards");
+var matchMakerName = document.getElementById("matchMakerName");
+
+// display user chosen name
+matchMakerName.innerHTML = "" + localStorage.getItem('userName') + ""; 
 
 // all of the card images
 var cardValueArray = [
@@ -45,7 +55,7 @@ var cardValueArray = [
     }
 ];
 
-// var animalName = cardValueArray.name;
+
 // counts how many cards have been selected
 var count = 0; 
 
@@ -54,17 +64,11 @@ var firstPick = "";
 var secondPick = "";
 
 // variable to prevent duplicate selection of same image
-var firstClick = null
+let previousTarget = null
 
 
 // runs initial JS on page load
 window.onload = assignInfo;
-
-// function start(){
-//     assignImages;
-//     // randomizeCards;
-// };
-
 
 // This function assigns images to the cards
 function assignInfo(){
@@ -78,6 +82,10 @@ function assignInfo(){
 //event listener for all cards
 for(var i = 0; i < card.length; i++){
     card[i].addEventListener("click", function(){
+        let clicked = event.target;
+  if (clicked.nodeName === 'SECTION' || clicked === previousTarget) {
+    return;
+  }
         if (count < 2){
             count++;
             if (count === 1){
@@ -97,6 +105,7 @@ for(var i = 0; i < card.length; i++){
                 resetCards();
             }
         }
+        previousTarget = clicked;
     })};
 
 
@@ -111,18 +120,3 @@ for(var i = 0; i < card.length; i++){
             card[i].classList.remove("selected");
         }
     }
-    // function randomizeCards(){
-    //     var random = Math.floor(Math.random() * card.length);
-    //     return card[random];
-    // }
-
-
-
-
-// first click is selected card
-
-// randomize assign
-//logic that compares selected cards
-//if match hide or remove cards with a status
-// else cover ID and alert Try Again!
-// update status class for each pair that is matched
